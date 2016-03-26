@@ -187,3 +187,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/Blog/Web.config
+/Blog/Web.Debug.config
+/Blog/Web.Release.config
