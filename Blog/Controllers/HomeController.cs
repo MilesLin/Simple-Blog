@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blog.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,8 +24,14 @@ namespace Blog.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            Random rd = new Random();
 
-            return View();
+            var data = new List<Person>(){
+                new Person () {Name="Jimmy", UrlDote="https://dotblogs.com.tw/jimmynotes", UrlImg="~/content/img/lufe.jpeg"},
+                new Person () {Name="Miles", UrlDote="https://dotblogs.com.tw/mileslin", UrlImg="~/content/img/solon.jpeg"}
+            }.OrderBy(o=> rd.Next()).ToList();
+            
+            return View(data);
         }
     }
 }
